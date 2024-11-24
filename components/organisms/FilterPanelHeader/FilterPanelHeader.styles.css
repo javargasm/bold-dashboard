@@ -1,0 +1,61 @@
+.filterPanel {
+    position: absolute;
+    right: 0;
+    top: calc(-1 * var(--spacing-xs));
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    width: 18rem;
+    z-index: var(--z-50);
+}
+
+.filterPanelContent {
+    padding: var(--spacing-lg);
+}
+
+.filterPanelHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filterPanelTitle {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    font-size: var(--font-size-sm);
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: var(--transition-colors);
+}
+
+.closeButton:hover {
+    color: var(--color-primary);
+}
+
+.closeIcon {
+    width: var(--spacing-lg);
+    height: var(--spacing-lg);
+}
+
+.filterOptions {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.filterOption {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filterOptionText {
+    font-size: var(--font-size-sm);
+    color: var(--color-primary);
+}

@@ -1,0 +1,37 @@
+.filterTabs {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-xs);
+}
+
+.tabsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tab {
+    flex: 1;
+    padding: var(--spacing-xs) var(--spacing-md);
+    margin-right: var(--spacing-xxs);
+    margin-left: var(--spacing-xxs);   
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-all);
+    border-radius: var(--border-radius-2xl) !important;
+}
+
+.tab:hover {
+    background-color: var(--color-light-gray);
+}
+
+.activeTab {
+    background-color: var(--color-light-gray);
+}
+
+.tabSkeleton {
+    flex: 1;
+    height: 36px;
+    margin: 0 var(--spacing-xxs);
+}

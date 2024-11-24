@@ -1,0 +1,132 @@
+.filterButtonContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.filterButton {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-all);
+    box-shadow: var(--shadow-sm);
+}
+
+.filterButton:hover {
+    background-color: var(--color-light-gray);
+}
+
+.buttonContent {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    margin-left: var(--spacing-xl);
+}
+
+.buttonText {
+    margin-right: var(--spacing-xs);
+    font-weight: 600;
+    font-family: var()
+}
+
+.buttonIcon {
+    width: var(--font-size-xl);
+    height: var(--font-size-xl);
+}
+
+.filterPanel {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: var(--spacing-xs);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    width: 18rem;
+    z-index: var(--z-50);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: var(--transition-transform);
+    pointer-events: none;
+}
+
+.filterPanel.open {
+    transform: scaleY(1);
+    pointer-events: auto;
+}
+
+.filterPanelContent {
+    padding: var(--spacing-lg);
+}
+
+.filterPanelHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    color: var(--color-gray-600);
+    cursor: pointer;
+    transition: var(--transition-colors);
+}
+
+.closeButton:hover {
+    color: var(--color-black);
+}
+
+.closeIcon {
+    width: var(--spacing-lg);
+    height: var(--spacing-lg);
+}
+
+.filterCheckbox {
+    margin-top: var(--spacing-xxs);
+    margin-right: var(--spacing-sm);
+    width: var(--font-size-xl);
+    height: var(--font-size-xl);
+    border: var(--border-width) solid var(--color-dark-gray);
+    border-radius: var(--border-radius-sm);
+    appearance: none;
+    cursor: pointer;
+    transition: var(--transition-all);
+    position: relative;
+}
+
+.filterCheckbox:checked {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.filterCheckbox:checked::after {
+    content: '✓';
+    font-size: var(--font-size-sm);
+    color: var(--color-white);
+    position: absolute;
+    top: 0;
+    left: var(--spacing-xxs);
+}
+
+.applyButton {
+    width: 100%;
+    margin-top: var(--spacing-md);
+    border-radius: var(--border-radius-2xl) !important;
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    color: var(--color-white);
+    background-color: var(--color-secondary);
+    cursor: pointer;
+    transition: var(--transition-all);
+}
+
+.applyButton:hover:not(:disabled) {
+    background-color: var(--color-secondary-dark);
+}
