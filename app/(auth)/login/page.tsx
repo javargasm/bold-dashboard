@@ -2,10 +2,9 @@ import Login from "@components/templates/Login";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Bold Home",
-  description: "Bold home page",
+  title: "BOLD | Login",
 };
 
-const Home = () => <Login />;
+const LoginPage = () => <Login />;
 
-export default Home;
+export default LoginPage;
