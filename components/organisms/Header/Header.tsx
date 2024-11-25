@@ -14,7 +14,7 @@ const TotalSalesCard = dynamic(
   }
 );
 
-const FilterTabs = dynamic(
+const FilterPeriodButtons = dynamic(
   () => import("@components/molecules/FilterPeriodButtons/FilterPeriodButtons"),
   {
     loading: () => <FilterTabsLoading />,
@@ -35,7 +35,7 @@ const Header = () => {
         <div className="headerContent">
           <TotalSalesCard />
           <div className="filterSection">
-            <FilterTabs />
+            <FilterPeriodButtons />
             <div className="filterButtonWrapper">
               <FilterButton />
             </div>
