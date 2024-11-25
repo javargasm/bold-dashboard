@@ -1,0 +1,101 @@
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .amount-skeleton {
+    margin-bottom: 0.8rem;
+  }
+  
+  .totalSales, .period {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+
+  .card {
+    position: relative;
+    width: 100%;
+    max-width: 25rem;
+    min-width: 15rem;
+    color: var(--color-white);
+    text-align: center; 
+  }
+  
+  .salesHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  } 
+  
+  .infoButton {
+    background: none;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    transition: var(--transition-colors);
+  }
+  
+  .infoButton:hover {
+    color: var(--color-light-gray);
+  }
+  
+  .totalSales {
+    background: linear-gradient(270deg, var(--color-secondary) 13.86%, var(--color-primary) 83.33%);
+    -webkit-background-clip: text;
+    background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    font-size: var(--font-size-3xl);
+    font-weight: bold;
+    align-items: center;
+
+  
+  }
+  
+  .period {
+    font-size: var(--font-size-sm);
+    color: var(--color-black);
+  }
+  
+  .tooltip {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: var(--spacing-xs);
+    padding: var(--spacing-xs);
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border: var(--border-width) solid var(--color-primary);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
+    z-index: var(--z-10);
+    width: 16rem;
+  }
+  
+  .tooltip p {
+    font-size: var(--font-size-sm);
+    margin: 0;
+  }
+  
+  .skeletonCircle {
+    border-radius: var(--border-radius-full);
+  }
+  
+  .skeletonSales {
+    margin-top: var(--spacing-md);
+  }
+  
+  .skeletonPeriod {
+    margin-top: var(--spacing-xs);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+

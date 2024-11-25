@@ -1,0 +1,202 @@
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-50);
+    overflow: hidden;
+    pointer-events: none;
+  }
+  
+  .modalOpen {
+    pointer-events: auto;
+  }
+  
+  .modalContainer {
+    position: fixed;
+    width: 34vw;
+    right: 0;
+    display: flex;
+    max-width: 100%;
+    padding-left: var(--spacing-2xl);
+  }
+  
+  .modal {
+    height: 100vh;
+    width: 100%;
+    max-width: var(--modal-max-width);
+    transform: translateX(100%);
+    transition: var(--transition-transform);
+    transform: translateX(100%);
+    transition: var(--transition-transform);
+  }
+  
+  .translateX0 {
+    transform: translateX(0);
+  }
+  
+  .translateXFull {
+    transform: translateX(100%);
+  }
+  
+  .modalContent {
+    height: 100%;
+    overflow-y: auto;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-lg);
+    border-top-left-radius: var(--border-radius-xl);
+    border-bottom-left-radius: var(--border-radius-xl);
+  }
+  
+  .modalHeader {
+    padding: var(--spacing-lg);
+    position: relative;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: none;
+    border: none;
+    color: var(--color-dark-gray);
+    cursor: pointer;
+    transition: var(--transition-colors);
+  }
+  
+  .closeButton:hover {
+    color: var(--color-black);
+  }
+  
+  .closeIcon {
+    width: var(--spacing-lg);
+    height: var(--spacing-lg);
+  }
+  
+  .modalHeaderContent {
+    margin-top: var(--spacing-4xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .statusIcon {
+    width: var(--spacing-xl);
+    height: var(--spacing-xl);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .successIcon {
+    color: #4caf50;
+  }
+  
+  .failureIcon {
+    color: #f44336;
+  }
+  
+  .modalTitle {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .transactionAmount {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .transactionDate {
+    font-size: var(--font-size-xs);
+    color: var(--color-dark-gray);
+    margin-bottom: var(--spacing-4xl);
+  }
+  
+  .transactionDetails {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .detailRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-xs);
+  }
+  
+  .detailLabel {
+    color: var(--color-dark-gray);
+  }
+  
+  .detailValue {
+    color: var(--color-black);
+  }
+  
+  .deductionValue {
+    color: var(--color-secondary);
+  }
+  
+  .paymentTypeContainer {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+  
+  .paymentMethodLogo {
+    width: var(--spacing-xl);
+    height: var(--spacing-xl);
+    border-radius: var(--border-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--color-white);
+  }
+  
+  .cardLogo {
+    background-color: #1a1f71;
+  }
+  
+  .pseLogo {
+    background-color: #0072ce;
+  }
+  
+  .otherLogo {
+    background-color: var(--color-light-gray);
+    color: var(--color-dark-gray);
+  }
+  
+  .typeTextStrong {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    color: var(--color-black);
+  }
+  
+  .paymentTypeIcon {
+    width: var(--font-size-xl);
+    height: var(--font-size-xl);
+    color: var(--color-dark-gray);
+  }
+  
+  .detailValuePaymentMethod {
+    border: var(--border-width) solid var(--color-light-gray);
+  }
+  
+  .separador {
+    border-top: var(--border-width) solid var(--color-light-gray);
+    margin: 0 var(--spacing-md);
+  }
+  
+  @media screen and (max-width: 1202px) {
+    .modalContainer {
+      width: 50vw;
+    }
+  }
+  
+  @media screen and (max-width: 804px) {
+    .modalContainer {
+      width: 100%;
+      padding-left: 0;
+    }
+  }

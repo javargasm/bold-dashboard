@@ -1,0 +1,94 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  transition: var(--transition-all);
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-family);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.primary {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: var(--color-secondary-dark);
+}
+
+.outline {
+  background-color: transparent;
+  border: var(--border-width) solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.xs {
+  padding: var(--spacing-xxs) var(--spacing-xs);
+  font-size: var(--font-size-xs);
+}
+
+.sm {
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: var(--font-size-sm);
+}
+
+.md {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-md);
+}
+
+.lg {
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--font-size-lg);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.button-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: var(--spacing-xs);
+  padding: var(--spacing-xs);
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: var(--border-width) solid var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-sm);
+  width: 16rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-all);
+  pointer-events: none;
+  z-index: var(--z-10);
+}
+
+.tooltip p {
+  font-size: var(--font-size-sm);
+  margin: 0;
+}
+
+.button-wrapper:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
