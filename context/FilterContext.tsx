@@ -2,6 +2,7 @@
 
 import { FilterPeriod, Filters } from "@models/transaction.model";
 import { createContext, useContext, useState } from "react";
+import { Cookies } from "react-cookie";
 
 type FiltersContextType = {
   filters: Filters;
@@ -30,18 +31,26 @@ export const FiltersProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [filters, setFilters] = useState<Filters>({
-    paymentTerminal: true,
-    linkPayment: true,
-    viewAll: true,
+  const [filters, setFilters] = useState<Filters>(() => {
+    const filterCookies = new Cookies().get("FILTERS");
+    if (filterCookies) {
+      return filterCookies;
+    }
+    return { paymentTerminal: true, linkPayment: true, viewAll: true };
   });
 
-  const [activePeriod, setActivePeriod] = useState<FilterPeriod>("month");
-
-
+  const [activePeriod, setActivePeriod] = useState<FilterPeriod>(() => {
+    const period = new Cookies().get("PERIOD");
+    if (period) {
+      return period;
+    }
+    return "month";
+  });
 
   return (
-    <FiltersContext.Provider value={{ filters, setFilters, activePeriod, setActivePeriod }}>
+    <FiltersContext.Provider
+      value={{ filters, setFilters, activePeriod, setActivePeriod }}
+    >
       {children}
     </FiltersContext.Provider>
   );

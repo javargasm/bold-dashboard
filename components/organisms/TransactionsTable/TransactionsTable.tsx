@@ -24,6 +24,7 @@ import { es } from "date-fns/locale";
 import LoadingTable from "@components/organisms/TransactionsTable/TransactionsTable.loading";
 import { getTableTitle } from "@utils/get-table-title";
 import "./TransactionsTable.styles.css";
+import Skeleton from "@components/atoms/Skeleton/Skeleton";
 
 export type SortOrder = "asc" | "desc";
 
@@ -109,7 +110,8 @@ const TransactionsTable = () => {
   const { activePeriod, filters } = useFiltersContext();
   const { setTotalAmount } = useTransactionsContext();
   const [isLoading, setIsLoading] = useState(true);
-  const itemsPerPage = 5; // Número fijo de elementos por página
+  const [title, setTitle] = useState<string | null>(null);
+  const itemsPerPage = 10; // Número fijo de elementos por página
 
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTransaction, setSelectedTransaction] =
@@ -193,6 +195,12 @@ const TransactionsTable = () => {
       return matchesPeriod && matchesPaymentType;
     });
   }, [transactions, activePeriod, filters]);
+
+  useEffect(() => {
+    if (activePeriod) {
+      setTitle(getTableTitle(activePeriod));
+    }
+  }, [activePeriod]);
 
   useEffect(() => {
     if (filteredTransactions) {
@@ -287,7 +295,9 @@ const TransactionsTable = () => {
   return (
     <div className="transactions-table">
       <div className="transactions-table-header">
-        <div className="transactions-table-title">{getTableTitle(activePeriod)}</div>
+        <div className="transactions-table-title">
+          {title ? title : <Skeleton width={200} />}
+        </div>
       </div>
 
       <div className="transactions-table-search">

@@ -19,7 +19,7 @@ export const TotalSalesCardLoading = () => {
 };
 
 export const FilterTabsLoading = () => (
-  <Skeleton height={48} borderRadius={8} />
+  <Skeleton height={100} borderRadius={8} />
 );
 
 export const FilterButtonLoading = () => (
