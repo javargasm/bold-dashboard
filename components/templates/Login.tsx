@@ -13,9 +13,9 @@ export default function Login() {
   const { goToPage } = useGoTo();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     goToPage("/dashboard");
-  }
+  };
 
   return (
     <div className="login-container">
@@ -27,12 +27,17 @@ export default function Login() {
         <form className="login-form" onSubmit={handleSubmit}>
           <div className="email-section">
             {isEditing ? (
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="email-input"
-              />
+              <>
+                <label htmlFor="email-input">Email*</label>
+                <input
+                  data-testid="email-input"
+                  id="email-input"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="email-input"
+                />
+              </>
             ) : (
               <div className="email-display">
                 <span>{email}</span>
@@ -48,13 +53,17 @@ export default function Login() {
           </div>
 
           <div className="password-section">
-            <label>Contraseña*</label>
+            <label htmlFor="password-input">Contraseña*</label>
             <div className="password-input-wrapper">
               <input
+                data-testid="password-input"
+                id="password-input"
                 type={showPassword ? "text" : "password"}
                 className="password-input"
               />
               <button
+                id="toggle-password"
+                data-testid="toggle-password"
                 type="button"
                 className="toggle-password"
                 onClick={() => setShowPassword(!showPassword)}

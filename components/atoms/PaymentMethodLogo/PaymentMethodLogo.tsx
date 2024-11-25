@@ -6,7 +6,7 @@ import Image from "next/image";
 const paymentMethods: Record<
   PaymentMethod,
   {
-    franchises?: { VISA: object; MASTERCARD: object };
+    franchises?: { VISA: object; MASTERCARD: object, INVALID: undefined };
     default?: object;
     image?: string;
     altText?: string;
@@ -25,6 +25,7 @@ const paymentMethods: Record<
         altText: "Mastercard",
         displayText: "**** 1214",
       },
+      INVALID: undefined
     },
     default: {
       image: "./assets/icons/card.svg",
@@ -61,7 +62,7 @@ const paymentMethods: Record<
 
 interface PaymentMethodLogoProps {
   method: PaymentMethod;
-  franchise?: "VISA" | "MASTERCARD";
+  franchise?: "VISA" | "MASTERCARD" | "INVALID";
 }
 
 const PaymentMethodLogo = ({
