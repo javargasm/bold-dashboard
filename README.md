@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bold Dashboard 📊
 
-## Getting Started
+Un dashboard moderno y dinámico construido con Next.js 15.0.3 para visualizar y analizar datos de transacciones mensuales.
 
-First, run the development server:
+## ✨ Características
 
-```bash
+•⁠  ⁠📈 Visualización de datos de transacciones mensuales
+•⁠  ⁠🔍 Filtrado avanzado con persistencia después de recargar la página
+•⁠  ⁠💫 Animaciones fluidas en componentes clave:
+  - Skeleton loading states
+  - Total Sales Card
+  - Transaction Modal
+  - Filter Button
+•⁠  ⁠🎨 Diseño atómico para una arquitectura escalable y mantenible
+
+## 🚀 Inicio Rápido
+
+### Prerrequisitos
+
+•⁠  ⁠Node.js (versión recomendada: LTS)
+•⁠  ⁠npm o yarn
+
+### Instalación
+
+1.⁠ ⁠Clona el repositorio:
+⁠ bash
+git clone https://github.com/javargasm/bold-dashboard
+ ⁠
+
+2.⁠ ⁠Instala las dependencias:
+⁠ bash
+npm i --force
+ ⁠
+
+3.⁠ ⁠Inicia el servidor de desarrollo:
+⁠ bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ ⁠
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El proyecto estará disponible en ⁠ http://localhost:3000 ⁠
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧪 Pruebas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Para ejecutar las pruebas:
 
-## Learn More
+⁠ bash
+npm run test
+ ⁠
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Construido Con
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+•⁠  ⁠[Next.js 15.0.3](https://nextjs.org/) - El framework React para producción
+•⁠  ⁠Implementación de Atomic Design para la arquitectura de componentes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 👨‍💻 Desarrollo
 
-## Deploy on Vercel
+Este proyecto fue desarrollado como parte de una prueba técnica, enfocándose en crear una interfaz intuitiva y funcional para la visualización de datos de ventas.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ✅ Estado del Proyecto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+El proyecto se encuentra en desarrollo activo y es una prueba técnica.
+
+## 📝 Notas Adicionales
+
+•⁠  ⁠La persistencia de filtros se mantiene incluso después de recargar la página
+•⁠  ⁠Implementación de estados de carga con animaciones skeleton para una mejor experiencia de usuario
+•⁠  ⁠Implementación de animaciones en la apertura de el botón filtrar y de el modal de transacciones
