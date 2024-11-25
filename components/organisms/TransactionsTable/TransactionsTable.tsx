@@ -9,6 +9,7 @@ import {
 } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import Button from "@components/atoms/Button/Button";
+import { TransactionModal } from "../../molecules/TransactionModal/TransactionModal";
 import { Transaction } from "@models/transaction.model";
 import { useFiltersContext } from "@context/FilterContext";
 import { useTransactionsContext } from "@context/TransactionsContext";
@@ -111,6 +112,9 @@ const TransactionsTable = () => {
   const itemsPerPage = 5; // Número fijo de elementos por página
 
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedTransaction, setSelectedTransaction] =
+    useState<Transaction | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [sortField, setSortField] = useState<SortField>("createdAt");
   const [sortOrder, setSortOrder] = useState<SortOrder>("desc");
@@ -265,7 +269,10 @@ const TransactionsTable = () => {
     sortedAndFilteredTransactions.length / itemsPerPage
   );
 
-
+  const handleRowClick = (transaction: Transaction) => {
+    setSelectedTransaction(transaction);
+    setIsModalOpen(true);
+  };
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
@@ -303,7 +310,7 @@ const TransactionsTable = () => {
                 <TransactionRow
                   key={transaction.id}
                   transaction={transaction}
-                  onClick={() => console.log("Open modal")}
+                  onClick={() => handleRowClick(transaction)}
                   isEven={index % 2 === 0}
                   rowHeight={100}
                   isMobile={true}
@@ -352,7 +359,7 @@ const TransactionsTable = () => {
                     <TransactionRow
                       key={transaction.id}
                       transaction={transaction}
-                      onClick={() => console.log("Open modal")}
+                      onClick={() => handleRowClick(transaction)}
                       isEven={index % 2 === 0}
                       rowHeight={100}
                       isMobile={false}
@@ -403,6 +410,11 @@ const TransactionsTable = () => {
         </div>
       </div>
 
+      <TransactionModal
+        transaction={selectedTransaction}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };
