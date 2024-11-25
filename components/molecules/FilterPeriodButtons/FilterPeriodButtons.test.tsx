@@ -36,6 +36,7 @@ jest.mock('@components/atoms/Skeleton/Skeleton', () => ({
 }));
 
 jest.mock('react-cookie', () => ({
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   withCookies: (component: any) => component,
   Cookies: class MockCookies {
     get = jest.fn()

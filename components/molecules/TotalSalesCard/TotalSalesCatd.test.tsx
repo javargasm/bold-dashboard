@@ -1,9 +1,7 @@
 import { render, screen, act } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import TotalSalesCard from './TotalSalesCard';
 import * as FilterContext from '@context/FilterContext';
 import * as TransactionsContext from '@context/TransactionsContext';
-import { getTableTitle } from '@utils/get-table-title';
 
 // Mocks
 jest.mock('@components/atoms/Card/Card', () => ({
@@ -18,6 +16,7 @@ jest.mock('@components/atoms/Card/Card', () => ({
 
 jest.mock('@components/atoms/Button/Button', () => ({
   __esModule: true,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   default: ({ children, tooltip }: any) => (
     <button data-testid="info-button" title={tooltip}>
       {children}
