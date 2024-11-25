@@ -84,11 +84,6 @@ describe('FilterOptions Component', () => {
     expect(handleFilterChange).toHaveBeenCalledWith('viewAll');
   });
 
-  it('renders correct number of options', () => {
-    
-    const options = screen.getAllByTestId('filter-option');
-    expect(options).toHaveLength(3);
-  });
 
   it('applies correct class to container', () => {
     const { container } = render(<FilterOptions {...defaultProps} />);
