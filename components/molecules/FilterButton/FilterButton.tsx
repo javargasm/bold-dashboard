@@ -7,8 +7,10 @@ import FilterPanel from "@components/organisms/FilterPanel/FilterPanel";
 import { useFiltersContext } from "@context/FilterContext";
 import Button from "@components/atoms/Button/Button";
 import "./FilterButton.styles.css";
+import { Cookies, withCookies } from "react-cookie";
+import { expiresCookie } from "@utils/helpers";
 
-const FilterButton = () => {
+const FilterButton = ({ cookies }: { cookies: Cookies }) => {
   const { filters, setFilters } = useFiltersContext();
   const [isOpen, setIsOpen] = useState(false);
   const [localFilters, setLocalFilters] = useState(filters);
@@ -40,13 +42,25 @@ const FilterButton = () => {
     }
   };
 
-
   const isAnyFilterSelected =
     localFilters.viewAll || Object.values(localFilters).some(Boolean);
 
   const handleApply = () => {
+    debugger;
     if (isAnyFilterSelected) {
-      setFilters(localFilters);
+      const cookiesFilters = cookies?.get("FILTERS");
+      if (
+        cookiesFilters &&
+        JSON.stringify(cookiesFilters) === JSON.stringify(localFilters)
+      ) {
+        setFilters(cookiesFilters);
+      } else {
+        cookies.set("FILTERS", localFilters, {
+          path: "/",
+          expires: expiresCookie(),
+        });
+        setFilters(localFilters);
+      }
       setIsOpen(false);
     }
   };
@@ -79,4 +93,4 @@ const FilterButton = () => {
   );
 };
 
-export default FilterButton;
+export default withCookies(FilterButton);

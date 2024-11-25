@@ -7,7 +7,6 @@ export type TransactionStatusProps = {
   salesType: string;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const TransactionStatus = ({ status, salesType }: TransactionStatusProps) => {
   const getPaymentIcon = (type: string) => {
     return type === "TERMINAL" ? (

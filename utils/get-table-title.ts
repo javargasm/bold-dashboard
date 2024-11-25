@@ -5,9 +5,10 @@ export const getTableTitle = (activePeriod: string) => {
       case "week":
         return "Tus ventas de esta semana";
       case "month":
-      default:
         return `Tus ventas de ${new Date().toLocaleString("es-ES", {
           month: "long",
         })}`;
+      default:
+        return "Tus ventas";
     }
   };
