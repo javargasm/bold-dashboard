@@ -25,10 +25,10 @@ export default function Login() {
         <h1>Inicia sesión con tu correo y contraseña</h1>
 
         <form className="login-form" onSubmit={handleSubmit}>
+        <label htmlFor="email-input">Email*</label>
           <div className="email-section">
             {isEditing ? (
               <>
-                <label htmlFor="email-input">Email*</label>
                 <input
                   data-testid="email-input"
                   id="email-input"
