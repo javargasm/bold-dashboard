@@ -1,6 +1,3 @@
-Here is the improved README with relevant words in bold, formatted as plain text in a code block:
-
-```
 # 📊 Bold Dashboard - Un **Dashboard Moderno** y **Dinámico** 
 
 Un dashboard moderno y dinámico construido con **Next.js 15.0.3** para **visualizar** y **analizar** datos de **transacciones mensuales**.
