@@ -1,0 +1,25 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "jsx": "react-jsx",
+      "esModuleInterop": true,
+      "module": "ESNext",
+      "moduleResolution": "node",
+      "target": "ES2021",
+      "lib": ["dom", "dom.iterable", "esnext"],
+      "allowJs": true,
+      "skipLibCheck": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "noEmit": true,
+      "isolatedModules": true
+    },
+    "include": [
+      "**/*.ts",
+      "**/*.tsx",
+      "jest.setup.ts"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  }
