@@ -67,7 +67,7 @@
 .tooltip {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate3d(-73%, -10px, 400px);
   margin-bottom: var(--spacing-xs);
   padding: var(--spacing-xs);
   background-color: var(--color-white);
